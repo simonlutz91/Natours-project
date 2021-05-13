@@ -2,7 +2,7 @@
 
 An fully responsive landing page for an imaginary outdoor adventure company using modern CSS technics.
 
-## View [live](https://natours-project-kappa.vercel.app/)
+## View [live](https://simonlutz91.github.io/natours-project/)
 
 ### Features:
 
