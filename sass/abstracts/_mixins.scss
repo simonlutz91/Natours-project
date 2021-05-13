@@ -1,0 +1,55 @@
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both; 
+  }
+}
+
+@mixin box-shadow {
+  box-shadow: 5px 5px 3rem rgba($color-black, .1);
+}
+
+@mixin absolut-position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+//mediaquery manager 
+/*  
+  - 0-600px     Phone
+  - 600-900px   Tablet portrait mode
+  - 900-1200px  Tablet landscape mode
+  - 1200-1800px normal styles
+*/
+
+/*
+  breakpoint argument choices
+  - phone
+  - tab-port
+  - tab-land
+
+1em = 16px
+
+Order: 1. Base and Typography
+2. Header footer and navigation + grid
+3. More specific page layout
+4. components 
+
+*/ 
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) { @content };
+  }
+  @if $breakpoint == tab-port {
+      @media only screen and (max-width: 56.25em) { @content };
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) { @content };
+  }
+}
+

@@ -1,0 +1,162 @@
+.section-about {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0;
+  margin-top: -20vh;
+
+  @include respond(tab-port){
+    margin-bottom: 40vh;
+    padding: 20rem 0;
+  }
+  @include respond(phone){
+    margin-bottom: 10vh
+  }
+}
+
+.section-feature{
+  height: auto;
+  background: linear-gradient(
+    to right bottom,
+    rgba($color-primary-light, 0.8),
+    rgba($color-primary-dark, 0.8)),
+    url(..//../img/feature.jpg);
+  background-position: center;
+  background-size: cover;
+  margin-top: -15rem;
+  padding: 15rem 0;
+  transform: skewY(-7deg);
+
+  // > is the direct child selector that lets you select every child you want. In this example the universal selector is used so all children are selecte.
+  & > * {
+    transform: skewY(7deg);
+  }
+}
+
+.section-tours {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0 0 0;
+  margin-top: -10vh;
+}
+
+.section-stories {
+  position: relative;
+  padding: 10rem 0;
+  font-size: $default-font-size;
+
+  @include respond(tab-port){
+    padding: 5rem 0
+  }
+}
+
+.section-book {
+  padding: 15rem 0;
+  background-image:
+  linear-gradient(to right bottom, $color-primary-dark, $color-primary-light);
+}
+
+.book {
+  background-image: linear-gradient(105deg,
+   rgba(250, 250, 250, .8) 0%,
+   rgba(250, 250, 250, .8) 50%,
+   transparent 50%),
+  url(../img/book.jpg);
+  background-size: cover;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .6);
+  height: auto;
+
+  @include respond(tab-port) {
+    background-image: linear-gradient(105deg,
+   rgba(250, 250, 250, .8) 0%,
+   rgba(250, 250, 250, .8) 65%,
+   transparent 65%),
+  url(../img/book.jpg);
+  }
+
+  @include respond(phone) {
+    background-image: linear-gradient(105deg,
+   rgba(250, 250, 250, .8) 0%,
+   rgba(250, 250, 250, .8) 100%,
+   transparent 0),
+   url(../img/book.jpg);
+   margin: 2rem;
+  }
+
+  &__form {
+    width: 50%;
+    padding: 6rem;
+
+    @include respond(tab-port) {
+      width: 65%;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+    }
+  }
+  
+}
+
+.footer {
+  padding: 10rem 0;
+  background: $color-grey-2;
+  font-size: 1.2rem;
+  color: white;
+
+  @include respond (tab-port) {
+    padding: 5rem 0;
+  }
+
+  &__logo {
+    text-align: center;
+  }
+
+  &__copyright {
+    border-top: .5px solid rgb(194, 192, 192);
+
+    
+  }
+
+  &__links {
+      display: block;
+      border-top: .5px solid rgb(194, 192, 192);
+
+      @include respond(tab-port){
+        text-align: center;
+        padding-top: 4rem;
+      }
+
+      @include respond(phone) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+
+      &--link {
+        &,
+        &:visited,
+        &:link {
+          display: inline-block;
+          color: white;
+          text-decoration: none;
+          text-transform: uppercase;
+          transition: all .3s;
+
+          &:not(:first-of-type){
+            margin-left: 4rem;
+
+            @include respond(phone){
+              margin-left: 2rem;
+
+
+            }
+          }
+        &:hover {
+          transform: rotate(5deg) scale(1.3);
+          color: $color-primary-dark;
+        }
+      }
+    }
+  }
+}
+
+

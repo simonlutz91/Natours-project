@@ -1,0 +1,60 @@
+.composition {
+  position: relative;
+  
+
+  &__image {
+    //you should always define the width of images in percentage if possible
+    width: 55%;
+    box-shadow: 0 2rem 2rem rgba($color-black, .3);
+    border-radius: 2px;
+    position: absolute;
+    transition: all 0.2s;
+
+    @include respond(tab-port){
+      width: 33.33%;
+    }
+
+
+    &--1 {
+      top: -2rem;
+      left: 0;
+      @include respond(tab-port){
+        left: 2rem;
+      }
+    }
+    &--2 {
+      top: 1rem;
+      right: 0;
+      @include respond(tab-port){
+        right: 6rem;
+        top: -2rem;
+      }
+    }
+    &--3 {
+      top: 9rem;
+      left: 10%;
+      @include respond(tab-port){
+        top: 1rem;
+        left: 31%;
+        width: 35% !important;
+      }
+    }
+  }
+
+  &__image:hover {
+    outline-offset: 1rem;
+    outline: 1rem solid $color-primary;
+    z-index: 5;
+    transform: scale(1.1);
+    box-shadow: 0 4rem 4rem rgba($color-black, .4);
+
+    
+    
+  }
+  &:hover &__image:not(:hover) {
+    transform: scale(0.75);
+  }
+}
+
+
+
